@@ -282,25 +282,6 @@ A production-grade microservices architecture featuring independently deployable
 ⚡  I love building full systems end-to-end, from database schema to deployed UI.
 ```
 
----
-
-## 🔧 Information To Add Manually
-
-> **Complete the following to make your profile 100% ready:**
-
-| # | Section | What To Add |
-|---|---------|------------|
-| 1 | **GitHub Projects** | Add GitHub repository links to all 3 projects (PixelMind, CareerAI, Load Balancer) |
-| 2 | **Currently Learning** | Update the "Currently Learning" badges with what you are actively studying right now |
-| 3 | **Profile Picture** | Add a professional headshot to your GitHub account |
-| 4 | **Pinned Repositories** | Pin your top 3–4 repositories on your GitHub profile page |
-| 5 | **GitHub Activity** | Ensure your repositories have proper `README.md`, descriptions, and topics/tags set |
-| 6 | **Open Source** | Add any open-source contributions if applicable |
-| 7 | **Blog/Articles** | If you write technical blogs (Dev.to, Medium, Hashnode), add those links |
-| 8 | **LeetCode / Coding Profile** | Add a LeetCode or HackerRank badge if you actively practice DSA |
-
----
-
 <div align="center">
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,50:203a43,100:0f2027&height=120&section=footer&animation=fadeIn" />
