@@ -1,0 +1,247 @@
+<svg width="900" height="200" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&amp;display=swap');
+
+      .bg { fill: #0d1117; }
+      .grid-line { stroke: #1a2332; stroke-width: 0.5; opacity: 0.6; }
+      .matrix-char {
+        font-family: 'Fira Code', 'Courier New', monospace;
+        font-size: 11px;
+        fill: #00ff41;
+        opacity: 0;
+      }
+      .name-text {
+        font-family: 'Fira Code', 'Courier New', monospace;
+        font-size: 42px;
+        font-weight: 700;
+        fill: #ffffff;
+        filter: drop-shadow(0 0 12px #00ff41) drop-shadow(0 0 24px #00c832);
+      }
+      .cursor {
+        fill: #00ff41;
+        animation: blink 0.8s step-end infinite;
+      }
+      .prompt { fill: #00ff41; font-family: 'Fira Code', 'Courier New', monospace; font-size: 13px; }
+      .cmd    { fill: #e2e8f0; font-family: 'Fira Code', 'Courier New', monospace; font-size: 13px; }
+      .output { fill: #7dd3fc; font-family: 'Fira Code', 'Courier New', monospace; font-size: 11px; }
+      .tag    { fill: #f472b6; font-family: 'Fira Code', 'Courier New', monospace; font-size: 11px; }
+      .bracket{ fill: #facc15; font-family: 'Fira Code', 'Courier New', monospace; font-size: 11px; }
+      .scanline {
+        fill: none;
+        stroke: #00ff41;
+        stroke-width: 1;
+        opacity: 0.04;
+      }
+      .glow-line {
+        stroke: #00ff41;
+        stroke-width: 1.5;
+        opacity: 0;
+        animation: glowPulse 3s ease-in-out infinite;
+      }
+      .corner { stroke: #00ff41; stroke-width: 1.5; fill: none; opacity: 0.6; }
+      .border-rect { fill: none; stroke: #1e3a2f; stroke-width: 1; rx: 4; }
+
+      /* Matrix rain animations */
+      .m0  { animation: rain0  3.2s linear infinite; }
+      .m1  { animation: rain1  2.8s linear infinite 0.3s; }
+      .m2  { animation: rain2  3.5s linear infinite 0.7s; }
+      .m3  { animation: rain3  2.5s linear infinite 1.1s; }
+      .m4  { animation: rain4  3.8s linear infinite 0.5s; }
+      .m5  { animation: rain5  2.9s linear infinite 1.4s; }
+      .m6  { animation: rain6  3.1s linear infinite 0.2s; }
+      .m7  { animation: rain7  2.6s linear infinite 0.9s; }
+      .m8  { animation: rain8  3.4s linear infinite 1.6s; }
+      .m9  { animation: rain9  3.0s linear infinite 0.4s; }
+      .m10 { animation: rain10 2.7s linear infinite 1.2s; }
+      .m11 { animation: rain11 3.6s linear infinite 0.8s; }
+      .m12 { animation: rain12 2.4s linear infinite 1.8s; }
+      .m13 { animation: rain13 3.3s linear infinite 0.1s; }
+      .m14 { animation: rain14 2.9s linear infinite 1.5s; }
+
+      /* Name typing animation */
+      .name-mask { animation: typeReveal 1.8s steps(16, end) 0.5s both; }
+
+      /* Subtitle chars */
+      .sub0  { animation: fadeChar 0.1s ease 2.4s both; }
+      .sub1  { animation: fadeChar 0.1s ease 2.5s both; }
+      .sub2  { animation: fadeChar 0.1s ease 2.6s both; }
+      .sub3  { animation: fadeChar 0.1s ease 2.7s both; }
+      .sub4  { animation: fadeChar 0.1s ease 2.8s both; }
+      .sub5  { animation: fadeChar 0.1s ease 2.9s both; }
+      .sub6  { animation: fadeChar 0.1s ease 3.0s both; }
+      .sub7  { animation: fadeChar 0.1s ease 3.1s both; }
+      .sub8  { animation: fadeChar 0.1s ease 3.2s both; }
+      .sub9  { animation: fadeChar 0.1s ease 3.3s both; }
+      .sub10 { animation: fadeChar 0.1s ease 3.4s both; }
+
+      /* Terminal lines */
+      .line1 { animation: slideIn 0.4s ease 4.0s both; }
+      .line2 { animation: slideIn 0.4s ease 4.5s both; }
+      .line3 { animation: slideIn 0.4s ease 5.0s both; }
+
+      .cursor-blink { animation: blink 0.8s step-end infinite 3.0s; opacity: 0; }
+
+      @keyframes blink      { 0%,100%{opacity:1} 50%{opacity:0} }
+      @keyframes glowPulse  { 0%,100%{opacity:0} 50%{opacity:0.15} }
+      @keyframes typeReveal { from{width:0} to{width:380px} }
+      @keyframes fadeChar   { from{opacity:0} to{opacity:1} }
+      @keyframes slideIn    { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
+
+      @keyframes rain0  { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.8} 90%{opacity:0.4} 100%{opacity:0;transform:translateY(220px)} }
+      @keyframes rain1  { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.7} 90%{opacity:0.3} 100%{opacity:0;transform:translateY(220px)} }
+      @keyframes rain2  { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.9} 90%{opacity:0.5} 100%{opacity:0;transform:translateY(220px)} }
+      @keyframes rain3  { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.6} 90%{opacity:0.2} 100%{opacity:0;transform:translateY(220px)} }
+      @keyframes rain4  { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.8} 90%{opacity:0.4} 100%{opacity:0;transform:translateY(220px)} }
+      @keyframes rain5  { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.7} 90%{opacity:0.3} 100%{opacity:0;transform:translateY(220px)} }
+      @keyframes rain6  { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.5} 90%{opacity:0.2} 100%{opacity:0;transform:translateY(220px)} }
+      @keyframes rain7  { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.9} 90%{opacity:0.5} 100%{opacity:0;transform:translateY(220px)} }
+      @keyframes rain8  { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.7} 90%{opacity:0.3} 100%{opacity:0;transform:translateY(220px)} }
+      @keyframes rain9  { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.8} 90%{opacity:0.4} 100%{opacity:0;transform:translateY(220px)} }
+      @keyframes rain10 { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.6} 90%{opacity:0.2} 100%{opacity:0;transform:translateY(220px)} }
+      @keyframes rain11 { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.9} 90%{opacity:0.5} 100%{opacity:0;transform:translateY(220px)} }
+      @keyframes rain12 { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.7} 90%{opacity:0.4} 100%{opacity:0;transform:translateY(220px)} }
+      @keyframes rain13 { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.5} 90%{opacity:0.2} 100%{opacity:0;transform:translateY(220px)} }
+      @keyframes rain14 { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:0.8} 90%{opacity:0.3} 100%{opacity:0;transform:translateY(220px)} }
+    </style>
+
+    <!-- Clip for name typing reveal -->
+    <clipPath id="nameClip">
+      <rect x="135" y="60" width="0" height="60" class="name-mask">
+        <animate attributeName="width" from="0" to="630" dur="1.8s" begin="0.5s" fill="freeze" calcMode="discrete" keyTimes="0;0.0625;0.125;0.1875;0.25;0.3125;0.375;0.4375;0.5;0.5625;0.625;0.6875;0.75;0.8125;0.875;0.9375;1" values="0;40;80;120;160;200;240;280;320;360;400;440;480;520;560;600;630"/>
+      </rect>
+    </clipPath>
+
+    <!-- Scanline gradient -->
+    <linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00ff41" stop-opacity="0.05"/>
+      <stop offset="50%" stop-color="#00ff41" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#00ff41" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <!-- Green glow filter -->
+    <filter id="greenGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="200" class="bg" rx="6"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.3">
+    <line x1="0" y1="20"  x2="900" y2="20"  class="grid-line"/>
+    <line x1="0" y1="40"  x2="900" y2="40"  class="grid-line"/>
+    <line x1="0" y1="60"  x2="900" y2="60"  class="grid-line"/>
+    <line x1="0" y1="80"  x2="900" y2="80"  class="grid-line"/>
+    <line x1="0" y1="100" x2="900" y2="100" class="grid-line"/>
+    <line x1="0" y1="120" x2="900" y2="120" class="grid-line"/>
+    <line x1="0" y1="140" x2="900" y2="140" class="grid-line"/>
+    <line x1="0" y1="160" x2="900" y2="160" class="grid-line"/>
+    <line x1="0" y1="180" x2="900" y2="180" class="grid-line"/>
+    <line x1="30"  y1="0" x2="30"  y2="200" class="grid-line"/>
+    <line x1="60"  y1="0" x2="60"  y2="200" class="grid-line"/>
+    <line x1="840" y1="0" x2="840" y2="200" class="grid-line"/>
+    <line x1="870" y1="0" x2="870" y2="200" class="grid-line"/>
+  </g>
+
+  <!-- Matrix rain — left cluster -->
+  <text x="12"  y="0" class="matrix-char m0" >01</text>
+  <text x="12"  y="14" class="matrix-char m0" opacity="0.5">ア</text>
+  <text x="28"  y="0" class="matrix-char m1" >10</text>
+  <text x="28"  y="14" class="matrix-char m1" opacity="0.4">ウ</text>
+  <text x="44"  y="0" class="matrix-char m2" >11</text>
+  <text x="44"  y="14" class="matrix-char m2" opacity="0.6">エ</text>
+  <text x="60"  y="0" class="matrix-char m3" >00</text>
+  <text x="60"  y="14" class="matrix-char m3" opacity="0.3">イ</text>
+  <text x="76"  y="0" class="matrix-char m4" >1</text>
+  <text x="76"  y="14" class="matrix-char m4" opacity="0.5">オ</text>
+
+  <!-- Matrix rain — right cluster -->
+  <text x="820" y="0" class="matrix-char m5" >01</text>
+  <text x="820" y="14" class="matrix-char m5" opacity="0.4">カ</text>
+  <text x="836" y="0" class="matrix-char m6" >10</text>
+  <text x="836" y="14" class="matrix-char m6" opacity="0.6">キ</text>
+  <text x="852" y="0" class="matrix-char m7" >11</text>
+  <text x="852" y="14" class="matrix-char m7" opacity="0.3">ク</text>
+  <text x="868" y="0" class="matrix-char m8" >00</text>
+  <text x="868" y="14" class="matrix-char m8" opacity="0.5">ケ</text>
+  <text x="884" y="0" class="matrix-char m9" >1</text>
+  <text x="884" y="14" class="matrix-char m9" opacity="0.4">コ</text>
+
+  <!-- Matrix rain — scattered background -->
+  <text x="110" y="0" class="matrix-char m10" opacity="0.2">0</text>
+  <text x="200" y="0" class="matrix-char m11" opacity="0.15">1</text>
+  <text x="750" y="0" class="matrix-char m12" opacity="0.2">0</text>
+  <text x="690" y="0" class="matrix-char m13" opacity="0.15">1</text>
+  <text x="320" y="0" class="matrix-char m14" opacity="0.1">1</text>
+
+  <!-- Corner brackets — top left -->
+  <polyline points="8,24 8,8 24,8"   class="corner"/>
+  <!-- Corner brackets — top right -->
+  <polyline points="876,8 892,8 892,24"  class="corner"/>
+  <!-- Corner brackets — bottom left -->
+  <polyline points="8,176 8,192 24,192"  class="corner"/>
+  <!-- Corner brackets — bottom right -->
+  <polyline points="876,192 892,192 892,176" class="corner"/>
+
+  <!-- Glow horizontal line -->
+  <line x1="100" y1="100" x2="800" y2="100" class="glow-line"/>
+
+  <!-- === MAIN CONTENT === -->
+
+  <!-- Prompt line above name -->
+  <text x="135" y="58" class="prompt" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.3s" fill="freeze"/>
+    ~/dev $
+  </text>
+  <text x="193" y="58" class="cmd" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.3s" fill="freeze"/>
+    whoami
+  </text>
+
+  <!-- NAME — typed reveal via clip -->
+  <g clip-path="url(#nameClip)">
+    <text x="135" y="108" class="name-text" filter="url(#greenGlow)">Mohammed Faisar A</text>
+  </g>
+  <!-- Ghost name for layout (invisible) -->
+  <text x="135" y="108" class="name-text" opacity="0">Mohammed Faisar A</text>
+
+  <!-- Blinking cursor after name -->
+  <rect x="635" y="78" width="3" height="34" class="cursor-blink" fill="#00ff41">
+    <animate attributeName="opacity" values="0;1;0" dur="0.8s" begin="2.3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Subtitle — character by character -->
+  <text y="132">
+    <tspan x="135" class="tag sub0">&lt;</tspan><tspan class="bracket sub1">role</tspan><tspan class="tag sub2">&gt;</tspan><tspan class="output sub3"> Full Stack Developer </tspan><tspan class="tag sub4">|</tspan><tspan class="output sub5"> AI Enthusiast </tspan><tspan class="tag sub6">|</tspan><tspan class="output sub7"> Problem Solver </tspan><tspan class="tag sub8">&lt;/</tspan><tspan class="bracket sub9">role</tspan><tspan class="tag sub10">&gt;</tspan>
+  </text>
+
+  <!-- Terminal bottom lines -->
+  <text x="135" y="154" class="line1" opacity="0">
+    <tspan class="prompt">~/dev $</tspan>
+    <tspan class="cmd"> skills --list | grep </tspan>
+    <tspan style="fill:#f472b6;font-family:'Fira Code',monospace;font-size:13px">"Java,React,AI,Spring"</tspan>
+  </text>
+  <text x="135" y="170" class="line2" opacity="0">
+    <tspan style="fill:#34d399;font-family:'Fira Code',monospace;font-size:11px">✔ </tspan>
+    <tspan class="output">8 skills matched · CGPA 8.50 · CodeHacks'25 Champion 🏆</tspan>
+  </text>
+  <text x="135" y="186" class="line3" opacity="0">
+    <tspan class="prompt">~/dev $</tspan>
+    <tspan class="cmd"> _</tspan>
+    <tspan style="fill:#00ff41;font-family:'Fira Code',monospace;font-size:13px">
+      <animate attributeName="opacity" values="1;0" dur="0.8s" begin="5.5s" repeatCount="indefinite"/>█
+    </tspan>
+  </text>
+
+  <!-- Status dot top right -->
+  <circle cx="858" cy="16" r="4" fill="#00ff41">
+    <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="866" y="20" style="fill:#00ff41;font-family:'Fira Code',monospace;font-size:9px;opacity:0.7">LIVE</text>
+
+  <!-- Bottom scanline overlay -->
+  <rect width="900" height="200" fill="url(#scanGrad)" rx="6" opacity="0.5"/>
+</svg>
