@@ -1,7 +1,7 @@
 <div align="center">
 
-<!-- Animated Banner -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=200&section=header&text=Mohammed%20Faisar%20A&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Full%20Stack%20Developer%20%7C%20AI%20Enthusiast%20%7C%20Problem%20Solver&descSize=18&descAlignY=58&animation=fadeIn" />
+<!-- Animated Programmer Banner -->
+<img width="100%" src="./banner.svg" alt="Mohammed Faisar A — Full Stack Developer | AI Enthusiast | Problem Solver" />
 
 <!-- Visitor Counter -->
 <img src="https://komarev.com/ghpvc/?username=MdFaisar&label=Profile%20Views&color=0e75b6&style=for-the-badge" alt="Profile Views" />
@@ -284,7 +284,7 @@ A production-grade microservices architecture featuring independently deployable
 
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,50:203a43,100:0f2027&height=120&section=footer&animation=fadeIn" />
+<img width="100%" src="https://raw.githubusercontent.com/MdFaisar/MdFaisar/main/banner.svg" alt="" style="transform:scaleY(-1);opacity:0.4" />
 
 *"Code is not just instructions for machines — it's a canvas for ideas."*
 
