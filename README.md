@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Animated Programmer Banner -->
-<img width="100%" src="./banner.svg" alt="Mohammed Faisar A — Full Stack Developer | AI Enthusiast | Problem Solver" />
+<!--<img width="100%" src="./banner.svg" alt="Mohammed Faisar A — Full Stack Developer | AI Enthusiast | Problem Solver" />-->
 
 <!-- Visitor Counter -->
 <img src="https://komarev.com/ghpvc/?username=MdFaisar&label=Profile%20Views&color=0e75b6&style=for-the-badge" alt="Profile Views" />
