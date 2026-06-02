@@ -1,4 +1,4 @@
-### Mohammed Faisar A
+###                                                         Mohammed Faisar A
 <div align="center">
 <!-- Animated Programmer Banner -->
 <!--<img width="100%" src="./banner.svg" alt="Mohammed Faisar A — Full Stack Developer | AI Enthusiast | Problem Solver" />-->
